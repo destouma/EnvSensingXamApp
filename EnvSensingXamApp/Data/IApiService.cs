@@ -8,6 +8,9 @@ namespace EnvSensingXamApp.Data
     {
         Task<DeviceList> getAllDevicesAsync();
 
-        Task<SensorList> getAllSensorsAsync();
+        Task<SensorList> getAllSensorsByDeviceAsync(String uuid);
+
+        Task<SensorReadingList> getAllSensorReadingsBySensorAsync(String uuid);
+
     }
 }

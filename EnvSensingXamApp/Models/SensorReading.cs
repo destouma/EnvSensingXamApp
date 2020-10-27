@@ -23,12 +23,21 @@ namespace EnvSensingXamApp.Models
             return sensorValue * Math.Pow(10,sensor.sensorType.pow10multi);
         }
 
+        public String getFormattedSensorValueWithUnit()
+        {
+            return (sensorValue * Math.Pow(10, sensor.sensorType.pow10multi)).ToString() + " " + sensor.sensorType.unit;
+        }
     }
 
     public class SensorReadingList
     {
         [JsonProperty("sensor_readings")]
         public List<SensorReading> sensorReadings { get; set; }
+
+        public int count()
+        {
+            return sensorReadings.Count;
+        }
     }
 
 }

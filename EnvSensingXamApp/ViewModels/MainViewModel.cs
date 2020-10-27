@@ -18,9 +18,6 @@ namespace EnvSensingXamApp.ViewModels
             set { SetProperty(ref textLabel, value); }
         }
 
-        public DeviceList deviceList;
-        public SensorList sensorList;
-
         private ObservableCollection<Device> items;
         public ObservableCollection<Device> Items
         {
@@ -40,25 +37,17 @@ namespace EnvSensingXamApp.ViewModels
             Items = new ObservableCollection<Device>();
 
             init();
-
         }
 
         private async void init()
         {
-            this.deviceList = await apiManager.getAllDevicesAsync();
-            foreach(Device device in deviceList.devices)
+            DeviceList deviceList = await apiManager.getAllDevicesAsync();
+            foreach (Device device in deviceList.devices)
             {
                 Debug.WriteLine("device name : " + device.name);
                 Items.Add(device);
             }
 
-            this.sensorList = await apiManager.getAllSensorsAsync();
-            foreach (Sensor sensor in sensorList.sensors)
-            {
-                Debug.WriteLine("sensor name : " + sensor.name);
-            }
-
         }
-
     }
 }

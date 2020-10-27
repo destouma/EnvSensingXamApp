@@ -18,9 +18,14 @@ namespace EnvSensingXamApp.Data
             return apiService.getAllDevicesAsync();
         }
 
-        public Task<SensorList> getAllSensorsAsync()
+        public Task<SensorList> getAllSensorsByDeviceAsync(String uuid)
         {
-            return apiService.getAllSensorsAsync();
+            return apiService.getAllSensorsByDeviceAsync(uuid);
+        }
+
+        public Task<SensorReadingList> getAllSensorReadingsBySensorAsync(String uuid)
+        {
+            return apiService.getAllSensorReadingsBySensorAsync(uuid);
         }
     }
 }

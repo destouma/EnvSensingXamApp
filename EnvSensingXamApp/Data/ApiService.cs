@@ -35,7 +35,7 @@ namespace EnvSensingXamApp.Data
 					Debug.WriteLine("jsonResponse : " + jsonResponse);
 
 					var result = JsonConvert.DeserializeObject<DeviceList>(jsonResponse);
-					Debug.WriteLine("jsonResponse : " + result.devices.Count);
+					Debug.WriteLine("jsonResponse : " + result.count());
 
 					return result;
 				}
@@ -46,14 +46,14 @@ namespace EnvSensingXamApp.Data
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(@"				ERROR {0}", ex.Message);
+				Debug.WriteLine("				ERROR :" + ex.Message);
 				return null;
 			}
 		}
 
-		public async Task<SensorList> getAllSensorsAsync()
+		public async Task<SensorList> getAllSensorsByDeviceAsync(String uuid)
         {
-			string deviceUrl = Constants.RestServer + "/api/v1/sensors.json";
+			string deviceUrl = Constants.RestServer + "/api/v1/sensors.json?uuid=" + uuid;
 			var deviceUri = new Uri(string.Format(deviceUrl));
 			try
 			{
@@ -67,7 +67,7 @@ namespace EnvSensingXamApp.Data
 					Debug.WriteLine("jsonResponse : " + jsonResponse);
 
 					var result = JsonConvert.DeserializeObject<SensorList>(jsonResponse);
-					Debug.WriteLine("jsonResponse : " + result.sensors.Count);
+					Debug.WriteLine("jsonResponse : " + result.count());
 
 					return result;
 				}
@@ -78,9 +78,42 @@ namespace EnvSensingXamApp.Data
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(@"				ERROR {0}", ex.Message);
+				Debug.WriteLine("				ERROR :" + ex.Message);
 				return null;
 			}
 		}
-	}
+
+		public async Task<SensorReadingList> getAllSensorReadingsBySensorAsync(String uuid)
+		{
+			string deviceUrl = Constants.RestServer + "/api/v1/sensor_readings.json?uuid=" + uuid;
+			var deviceUri = new Uri(string.Format(deviceUrl));
+			try
+			{
+				HttpResponseMessage response = null;
+
+				response = await client.GetAsync(deviceUri);
+				Debug.WriteLine("response : " + response.ToString());
+				if (response.StatusCode == System.Net.HttpStatusCode.OK)
+				{
+					var jsonResponse = await response.Content.ReadAsStringAsync();
+					Debug.WriteLine("jsonResponse : " + jsonResponse);
+
+					var result = JsonConvert.DeserializeObject<SensorReadingList>(jsonResponse);
+					Debug.WriteLine("jsonResponse : " + result.count());
+
+					return result;
+				}
+				else
+				{
+					return null;
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine("				ERROR :" + ex.Message);
+				return null;
+			}
+		}
+
+    }
 }

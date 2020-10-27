@@ -5,7 +5,6 @@ namespace EnvSensingXamApp
     {
         public static string RestServer = "http://192.168.1.238";
 
-    
     }
 }
 
