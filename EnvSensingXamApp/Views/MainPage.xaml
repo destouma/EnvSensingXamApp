@@ -9,28 +9,9 @@
              xmlns:vm="clr-namespace:EnvSensingXamApp.ViewModels"
              xmlns:i18n="clr-namespace:EnvSensingXamApp;assembly=EnvSensingXamApp"
              xmlns:controls="clr-namespace:EnvSensingXamApp;assembly=EnvSensingXamApp">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="{i18n:Translate Devices}"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
-        <ListView ItemsSource="{Binding Items}"
-              CachingStrategy="RecycleElement"
-              RowHeight="60">
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Margin="8">
-                            <Label Text="{Binding name}"
-                               FontAttributes="Bold" />
-                            <Label Text="{Binding uuid}" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>        
-
-        </ListView>
-
-    </StackLayout>
+     <ContentView    x:Name="BodyContent"     
+                        VerticalOptions="FillAndExpand"
+                        Margin="0,0,0,0"
+                        Padding="0">
+     </ContentView>
 </ContentPage>

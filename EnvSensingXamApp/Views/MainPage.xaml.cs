@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 using EnvSensingXamApp.ViewModels;
+using EnvSensingXamApp.Views;
 
 namespace EnvSensingXamApp
 {
@@ -21,14 +22,12 @@ namespace EnvSensingXamApp
         public MainPage()
         {
             InitializeComponent();
+
             BindingContext = viewModel = new MainViewModel();
-            init();
+
+            BodyContent.Content = new DevicesView();
+
         }
-
-       private async void init()
-       {
-
-       }
 
     }
 }

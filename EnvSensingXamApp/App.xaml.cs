@@ -1,4 +1,5 @@
 ﻿using System;
+using EnvSensingXamApp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace EnvSensingXamApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new SplashPage());
         }
 
         protected override void OnStart()
