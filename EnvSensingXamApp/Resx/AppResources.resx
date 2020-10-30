@@ -16,4 +16,10 @@
     <data name="Devices" xml:space="preserve">
         <value>Devices</value>    
     </data>
+    <data name="Sensors" xml:space="preserve">
+        <value>Sensors</value>    
+    </data>
+    <data name="Readings" xml:space="preserve">
+        <value>Sensor readings</value>    
+    </data>
 </root>

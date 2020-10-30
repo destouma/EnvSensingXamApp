@@ -52,5 +52,17 @@ namespace EnvSensingXamApp.Resx {
                 return ResourceManager.GetString("Devices", resourceCulture);
             }
         }
+        
+        internal static string Sensors {
+            get {
+                return ResourceManager.GetString("Sensors", resourceCulture);
+            }
+        }
+        
+        internal static string Readings {
+            get {
+                return ResourceManager.GetString("Readings", resourceCulture);
+            }
+        }
     }
 }

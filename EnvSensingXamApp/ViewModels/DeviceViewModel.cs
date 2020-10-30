@@ -10,14 +10,6 @@ namespace EnvSensingXamApp.ViewModels
     {
         private ApiManager apiManager { get; set; }
 
-        string textLabel = string.Empty;
-
-        public string TextLabel
-        {
-            get { return textLabel; }
-            set { SetProperty(ref textLabel, value); }
-        }
-
         private ObservableCollection<Device> items;
         public ObservableCollection<Device> Items
         {
@@ -32,7 +24,6 @@ namespace EnvSensingXamApp.ViewModels
         {
             apiManager = new ApiManager(new ApiService());
 
-            TextLabel = "Test Label From View Model";
             Items = new ObservableCollection<Device>();
 
             init();

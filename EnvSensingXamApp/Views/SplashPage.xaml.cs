@@ -25,7 +25,7 @@ namespace EnvSensingXamApp.Views
         {
             await Task.Delay(5000);
 
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current.MainPage = new NavigationPage(new DevicePage());
             
         }
     }

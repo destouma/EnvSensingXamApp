@@ -53,7 +53,7 @@ namespace EnvSensingXamApp.Data
 
 		public async Task<SensorList> getAllSensorsByDeviceAsync(String uuid)
         {
-			string deviceUrl = Constants.RestServer + "/api/v1/sensors.json?uuid=" + uuid;
+			string deviceUrl = Constants.RestServer + "/api/v1/sensors.json?device_uuid=" + uuid;
 			var deviceUri = new Uri(string.Format(deviceUrl));
 			try
 			{
@@ -85,7 +85,7 @@ namespace EnvSensingXamApp.Data
 
 		public async Task<SensorReadingList> getAllSensorReadingsBySensorAsync(String uuid)
 		{
-			string deviceUrl = Constants.RestServer + "/api/v1/sensor_readings.json?uuid=" + uuid;
+			string deviceUrl = Constants.RestServer + "/api/v1/sensor_readings.json?sensor_uuid=" + uuid;
 			var deviceUri = new Uri(string.Format(deviceUrl));
 			try
 			{
