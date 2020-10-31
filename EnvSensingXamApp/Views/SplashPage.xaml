@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EnvSensingXamApp.Views.SplashPage">
-    <ContentPage.Content>
-        <BoxView BackgroundColor="{DynamicResource red}"
-            />
-    </ContentPage.Content>
+             x:Class="EnvSensingXamApp.Views.SplashPage"
+             BackgroundColor="{DynamicResource SplashBackgroundColor}"
+              xmlns:i18n="clr-namespace:EnvSensingXamApp;assembly=EnvSensingXamApp"
+             xmlns:controls="clr-namespace:EnvSensingXamApp;assembly=EnvSensingXamApp">
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label
+                Text="{i18n:Translate EnvSensing}"
+                TextColor="{DynamicResource SplashTextColor}"
+                FontSize="Title"/>
+        </StackLayout>
 </ContentPage>

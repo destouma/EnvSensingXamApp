@@ -12,10 +12,14 @@ namespace EnvSensingXamApp.Models
         [JsonProperty("sensor_value")]
         public long sensorValue { get; set; }
 
-        public SensorReading(Sensor _sensor, int _value)
+        [JsonProperty("date_time")]
+        public DateTime dateTime { get; set; }
+
+        public SensorReading(Sensor _sensor, int _value, DateTime _date_time)
         {
             sensor = _sensor;
             sensorValue = _value;
+            dateTime = _date_time;
         }
 
         public double getFormattedSensorValue()

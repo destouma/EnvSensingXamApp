@@ -10,4 +10,21 @@
     <Color x:Key="white">#FFFFFF</Color>
     <Color x:Key="black">#000000</Color>
 
+    <Color x:Key="PageBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="TopBarBackgroundColor">#5974A8</Color>
+    <Color x:Key="SplashBackgroundColor">#5974A8</Color>
+    
+    <Color x:Key="ContentTextColor">#000000</Color>
+    <Color x:Key="TobBarTextColor">#FFFFFF</Color>
+    <Color x:Key="SplashTextColor">#FFFFFF</Color>
+
+
+    <Color x:Key="Transparent">Transparent</Color>
+
+     <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{StaticResource TopBarBackgroundColor}"> </Setter>
+        <Setter Property="BarTextColor" Value="{StaticResource TobBarTextColor}"></Setter>
+    </Style>
+ 
+
 </ResourceDictionary>

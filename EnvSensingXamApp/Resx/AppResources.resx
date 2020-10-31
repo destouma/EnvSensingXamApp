@@ -22,4 +22,7 @@
     <data name="Readings" xml:space="preserve">
         <value>Sensor readings</value>    
     </data>
+    <data name="EnvSensing" xml:space="preserve">
+        <value>Environmental Sensing</value>    
+    </data>
 </root>

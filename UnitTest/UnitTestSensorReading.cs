@@ -29,35 +29,35 @@ namespace UnitTestSensorReading
         [Test]
         public void TestSensorReadingPOW0()
         {  
-            SensorReading sensorReading = new SensorReading(sensor1, 100);
+            SensorReading sensorReading = new SensorReading(sensor1, 100,new System.DateTime());
             Assert.AreEqual(100.0, sensorReading.getFormattedSensorValue());
         }
 
         [Test]
         public void TestSensorReadinPOWP2()
         {
-            SensorReading sensorReading = new SensorReading(sensor2, 100);
+            SensorReading sensorReading = new SensorReading(sensor2, 100, new System.DateTime());
             Assert.AreEqual(10000.0,sensorReading.getFormattedSensorValue());
         }
 
         [Test]
         public void TestSensorReadingPOWM2()
         {
-            SensorReading sensorReading = new SensorReading(sensor3, 100);
+            SensorReading sensorReading = new SensorReading(sensor3, 100, new System.DateTime());
             Assert.AreEqual(1.0,sensorReading.getFormattedSensorValue());
         }
 
         [Test]
         public void TestSensorReadingPOWM2PI()
         {
-            SensorReading sensorReading = new SensorReading(sensor3, 314);
+            SensorReading sensorReading = new SensorReading(sensor3, 314, new System.DateTime());
             Assert.AreEqual(3.14,sensorReading.getFormattedSensorValue());
         }
 
         [Test]
         public void TestSensorReadingFormattedStringPOWM2PI()
         {
-            SensorReading sensorReading = new SensorReading(sensor3, 314);
+            SensorReading sensorReading = new SensorReading(sensor3, 314, new System.DateTime());
             Assert.AreEqual("3.14 U3",sensorReading.getFormattedSensorValueWithUnit());
         }
 
