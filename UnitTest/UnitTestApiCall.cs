@@ -23,7 +23,7 @@ namespace UnitTestApiCall
         public async System.Threading.Tasks.Task getSensorsAsync()
         {
             ApiManager apiManager = new ApiManager(new ApiService());
-            SensorList sensorList = await apiManager.getAllSensorsByDeviceAsync("123-123-000-0001");
+            SensorList sensorList = await apiManager.getAllSensorsByDeviceAsync("123-123-000-000");
             Assert.AreNotEqual(0, sensorList.count());
         }
 
@@ -39,7 +39,7 @@ namespace UnitTestApiCall
         public async System.Threading.Tasks.Task getSensorReadingsAsync()
         {
             ApiManager apiManager = new ApiManager(new ApiService());
-            SensorReadingList sensorReadingList = await apiManager.getAllSensorReadingsBySensorAsync("123-123-000-0001");
+            SensorReadingList sensorReadingList = await apiManager.getAllSensorReadingsBySensorAsync("123-123-000-001");
             Assert.AreNotEqual(0, sensorReadingList.count());
         }
     }

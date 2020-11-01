@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Newtonsoft.Json;
 
 namespace EnvSensingXamApp.Models
 {
     public class SensorReading
     {
+
         [JsonProperty("sensor")]
         public Sensor sensor { get; set; }
 
@@ -37,6 +39,11 @@ namespace EnvSensingXamApp.Models
     {
         [JsonProperty("sensor_readings")]
         public List<SensorReading> sensorReadings { get; set; }
+
+        public SensorReadingList()
+        {
+            sensorReadings = new List<SensorReading>();
+        }
 
         public int count()
         {

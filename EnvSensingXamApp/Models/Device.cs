@@ -36,6 +36,11 @@ namespace EnvSensingXamApp.Models
         [JsonProperty("devices")]
         public List<Device> devices { get; set; }
 
+        public DeviceList()
+        {
+            devices = new List<Device>();
+        }
+
         public int count()
         {
             return devices.Count;

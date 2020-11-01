@@ -41,7 +41,7 @@ namespace EnvSensingXamApp.Data
 				}
 				else
 				{
-					return null;
+					return new DeviceList();
 				}
 			}
 			catch (Exception ex)
@@ -73,7 +73,7 @@ namespace EnvSensingXamApp.Data
 				}
 				else
 				{
-					return null;
+					return new SensorList();
 				}
 			}
 			catch (Exception ex)
@@ -105,7 +105,7 @@ namespace EnvSensingXamApp.Data
 				}
 				else
 				{
-					return null;
+					return new SensorReadingList();
 				}
 			}
 			catch (Exception ex)
