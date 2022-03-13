@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnvSensingXamApp.Views.ReadingPage"
+             xmlns:views="clr-namespace:EnvSensingXamApp.Views"
+             xmlns:vm="clr-namespace:EnvSensingXamApp.ViewModels"
+             xmlns:i18n="clr-namespace:EnvSensingXamApp;assembly=EnvSensingXamApp"
+             xmlns:controls="clr-namespace:EnvSensingXamApp;assembly=EnvSensingXamApp"
+             Title="{i18n:Translate Readings}"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ContentPage.Content>
+        <ScrollView>
+        <!-- Place new controls here -->
+        <!--<Label Text="{i18n:Translate Devices}"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />-->
+            <ListView ItemsSource="{Binding Items}"
+                CachingStrategy="RecycleElement"
+                RowHeight="60"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="8">
+                                <Label Text="{Binding displayValue}" FontAttributes="Bold" />
+                                <Label Text="{Binding displayDateTime}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>        
+            </ListView>                      
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
